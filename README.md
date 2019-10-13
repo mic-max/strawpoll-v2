@@ -44,6 +44,8 @@ This list is probably going to be a mess until I make more progress.
 	- Buttons to navigate to next and prev poll
 	- Popular, random, hot, featured polls
 - ~Feature: Add version number to the footer~
+- ~Design: Make sure tabbing works to go to the next element~
+	- ~It should create the poll when you press enter~
 - Feature: Allow multiple votes, select box instead of radio
 - Feature: Allow adding options after the poll was already created
 - Feature: Optionally options can have an associated image, use imgur ??
@@ -51,8 +53,6 @@ This list is probably going to be a mess until I make more progress.
 - Feature: Set voting time limit or end time
 - Feature: Optionally add captchas before letting a user vote
 - Feature: Hide results until user has voted ??
-- Design: Make sure tabbing works to go to the next element
-	- It should create the poll when you press enter
 - Test: Test on all major browsers
 - Test: Add unit tests
 - Test: Improve the logging

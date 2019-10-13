@@ -9,6 +9,10 @@
 	padding: 0;
 }
 
+*:focus {
+	outline: 1px dotted var(--offwhite);
+}
+
 body {
 	padding: 50px;
 	margin: 0px auto;
@@ -80,7 +84,6 @@ button {
 	display: inline-block;
 	border: none;
 	margin-top: 10px;
-	outline: none;
 }
 
 .r {

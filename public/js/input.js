@@ -1,3 +1,5 @@
+/* eslint no-undef: 0 */
+
 let input_count = 4
 
 function last_input() {
@@ -18,6 +20,12 @@ function add_input() {
 	input_count++
 }
 
+function press_enter(event) {
+	if (event.code === 'Enter')
+		create_poll()
+}
+
 window.onload = () => {
 	last_input().addEventListener('input', add_input)
+	document.addEventListener('keyup', press_enter)
 }
