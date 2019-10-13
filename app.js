@@ -14,10 +14,11 @@ const app = express()
 const server = http.createServer(app)
 const wss = new WebSocket.Server({ server })
 
+const PORT = process.env.PORT || 8080
 const IS_DEV = process.env.NODE_ENV === 'DEV'
 
-server.listen(8080, () => {
-	console.log('Server listening @', 8080)
+server.listen(PORT, () => {
+	console.log('Server listening @', PORT)
 })
 
 wss.on('connection', (ws) => {

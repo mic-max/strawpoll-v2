@@ -1,6 +1,6 @@
 {
 	"name": "strawpoll",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Application for Creating and Voting on Polls",
 	"keywords": ["poll", "voting", "strawpoll", "vote", "ballot", "survey"],
 	"homepage": "https://github.com/mic-max/strawpoll-v2#readme",
