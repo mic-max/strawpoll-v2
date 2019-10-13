@@ -41,22 +41,16 @@ async function vote() {
 		option: radio.value
 	}
 
-	try {
-		// eslint-disable-next-line no-undef
-		const res = await fetch(`${location.origin}/polls/${id}`, {
-			method: 'PUT',
-			body: JSON.stringify(data),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
-		if (res.ok)
-			show_results()
-		else
-			console.log(res)
-	} catch (err) {
-		console.error(err)
-	}
+	// eslint-disable-next-line no-undef
+	fetch(`${location.origin}/polls/${id}`, {
+		method: 'PUT',
+		body: JSON.stringify(data),
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	})
+		.then((data) => show_results())
+		.catch((err) => console.error(err))
 }
 
 // eslint-disable-next-line no-unused-vars 

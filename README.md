@@ -67,6 +67,7 @@ This list is probably going to be a mess until I make more progress.
     - Make Vote button flash red ??
     - Let user know their vote didn't count ??
 - Feature: On results page indicate which option(s) the viewer voted for
+- Feature: Allow users to save a poll as a draft, as a link with query parameters ??
 
 - Design: Add a cool 404 page
 - Code: Add badges to the README https://shields.io/

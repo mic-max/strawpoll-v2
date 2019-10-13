@@ -6,24 +6,21 @@ const WebSocket = require('ws')
 const mongoose = require('mongoose')
 
 const debug = require('debug')('strawpoll:app')
-const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const favicon = require('serve-favicon')
 
 const index = require('./routes/index')
-// const polls = require('./routes/polls')
-
 
 // Express Setup
 const app = express()
-
 const server = http.createServer(app)
 const wss = new WebSocket.Server({ server })
 
-const port = parseInt(process.env.PORT) || 3000
+const PORT = parseInt(process.env.PORT || '3000')
+const IS_PROD = process.env.NODE_ENV === 'PROD'
 
-server.listen(port, () => {
-	debug('Server listening @', port)
+server.listen(PORT, () => {
+	debug('Server listening @', PORT)
 })
 
 wss.on('connection', (ws) => {
@@ -52,7 +49,6 @@ app.use(logger('dev'))
 app.use(favicon(path.join(__dirname, 'public', 'img/favicon.png')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
@@ -116,16 +112,13 @@ app.use('/polls', router)
 app.use((err, req, res) => {
 	// set locals, only providing error in development
 	res.locals.message = err.message
-	res.locals.error = req.app.get('env') === 'development' ? err : {}
+	res.locals.error = IS_PROD ? {} : err
 	
 	app.use('/', index)
 	// render the error page
 	res.status(err.status || 500)
-	console.log('here')
 	res.render('error')
 })
-
-const IS_PROD = process.env.NODE_ENV === 'PROD'
 
 const {DB_USER, DB_PASS, DB_HOST, DB_NAME} = process.env
 let dbString = `mongodb://localhost/${DB_NAME}`
