@@ -1,4 +1,7 @@
-// eslint-disable-next-line no-unused-vars, no-undef
+/* eslint no-unused-vars: 0 */
+/* eslint no-undef: 0 */
+/* eslint require-atomic-updates: 0 */
+
 async function create_poll() {
 	const data = {
 		question: document.querySelector('.question').value,
@@ -23,21 +26,18 @@ async function create_poll() {
 
 		const id = await res.json()
 		// alert(`Poll created at: ${location.origin}/${id}`)
-		// eslint-disable-next-line require-atomic-updates
 		location.href += id
 	} catch (error) {
 		console.error('Error:', error)
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
 async function vote() {
 	const radio = document.querySelector('input[name="option"]:checked')
 
 	if (!radio)
 		return
 
-	// eslint-disable-next-line no-undef
 	const id = get_id_from_url()
 	const data = {
 		option: radio.value
@@ -60,7 +60,6 @@ async function vote() {
 	}
 }
 
-// eslint-disable-next-line no-unused-vars
 function show_results() {
 	location.href += '/r'
 }

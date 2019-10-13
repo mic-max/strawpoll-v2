@@ -4,13 +4,11 @@ const path = require('path')
 const express = require('express')
 const WebSocket = require('ws')
 const mongoose = require('mongoose')
-
 const logger = require('morgan')
 const favicon = require('serve-favicon')
 
 const index = require('./routes/index')
 
-// Express Setup
 const app = express()
 const server = http.createServer(app)
 const wss = new WebSocket.Server({ server })
@@ -38,8 +36,6 @@ wss.broadcast = (id, option) => {
 	})
 }
 
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -77,7 +73,6 @@ router.post('/', async (req, res, next) => {
 		.catch((err) => next(err))
 })
 
-/* Update a poll */
 router.put('/:id', async (req, res, next) => {
 	const id = req.params.id
 	const option = req.body.option
@@ -105,14 +100,11 @@ router.put('/:id', async (req, res, next) => {
 
 app.use('/polls', router)
 
-// error handler
 app.use((err, req, res) => {
-	// set locals, only providing error in development
 	res.locals.message = err.message
 	res.locals.error = IS_DEV ? err : {}
 
 	app.use('/', index)
-	// render the error page
 	res.status(err.status || 500)
 	res.render('error')
 })
