@@ -1,5 +1,8 @@
 # Strawpoll
 
+[![Build status](https://dev.azure.com/mic-max/Strawpoll/_apis/build/status/strawpoll%20-%20CI)](https://dev.azure.com/mic-max/Strawpoll/_build/latest?definitionId=2)
+[![Deployment status](https://vsrm.dev.azure.com/mic-max/_apis/public/Release/badge/aaea9094-828a-4491-bb33-f65861658613/2/2)](https://dev.azure.com/mic-max/Strawpoll/_release)
+
 I created a similar project when I was in first year university and wanted to recreate it to see how far I've progressed. The 2015 version was written using PHP 5, MySQL (which I'm sure I setup in a way that was succeptible to SQL injection attacks), terrible coding style (1 letter variable names) and a lot of effort spent setting it up on my custom VPS.
 
 Now that I'm a more seasoned web developer I chose to use Node.js, WebSocket (instead of each user polling the database every 2 seconds to see changes) and MongoDB. These changes should make the app a lot easier to modify and evolve as users have suggestions for features they'd like to see. Also, this will be hosted on Microsoft Azure so deployment is going to be a lot easier to manage and I have also focused on making local development just as easy.
