@@ -15,7 +15,6 @@ block content
 				span= `${index + 1}. ${val.text}`
 			.row.option
 				meter(value=votes / total_votes)
-				- percent = (votes / total_votes * 100)
-				span.r= `${votes} votes, ${total_votes == 0 ? '00.00' : (percent < 10 ? '0' : '') + percent.toFixed(2)} %`
+				span.r= `${votes} votes, ${util.percent_as_str(votes, total_votes)} %`
 	br
 	button#total.r= `${total_votes} total votes`

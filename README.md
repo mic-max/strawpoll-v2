@@ -23,6 +23,7 @@ So here's some instructions on getting up and started if you want to run this we
 ### Production
 0. The Azure App Service startup command should be: `npm start`
 1. Then press the `Deploy to Web App...` button on the App Service pane of the Azure extension for VS Code.
+2. Setup CI / CD using Azure Pipelines to automatically build and deploy the app when the `master` branch is updated.
 
 ### Development
 0. Ensure the MongoDB service is running
