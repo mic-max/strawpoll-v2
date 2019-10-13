@@ -17,8 +17,8 @@ const wss = new WebSocket.Server({ server })
 
 const IS_DEV = process.env.NODE_ENV === 'DEV'
 
-server.listen(9001, () => {
-	console.log('Server listening @', 9001)
+server.listen(8080, () => {
+	console.log('Server listening @', 8080)
 })
 
 wss.on('connection', (ws) => {
