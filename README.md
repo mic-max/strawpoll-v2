@@ -37,12 +37,12 @@ So here's some instructions on getting up and started if you want to run this we
 This list is probably going to be a mess until I make more progress.
 
 - ~Custom domain name: strawpoll.xyz~
-    - Have www.strawpoll.xyz redirect to strawpoll.xyz
+	- Have www.strawpoll.xyz redirect to strawpoll.xyz
 - ~Feature: Live updates on the results page~
-    - Add a cool graph to the results page, pie chart ??
+	- Add a cool graph to the results page, pie chart ??
 - ~Feature: Have Poll IDs start from 1~
-    - Buttons to navigate to next and prev poll
-    - Popular, random, hot, featured polls
+	- Buttons to navigate to next and prev poll
+	- Popular, random, hot, featured polls
 - Feature: Allow multiple votes, select box instead of radio
 - Feature: Allow adding options after the poll was already created
 - Feature: Optionally options can have an associated image, use imgur ??
@@ -51,7 +51,7 @@ This list is probably going to be a mess until I make more progress.
 - Feature: Optionally add captchas before letting a user vote
 - Feature: Hide results until user has voted ??
 - Design: Make sure tabbing works to go to the next element
-    - It should create the poll when you press enter
+	- It should create the poll when you press enter
 - Test: Test on all major browsers
 - Test: Add unit tests
 - Test: Improve the logging
@@ -64,11 +64,11 @@ This list is probably going to be a mess until I make more progress.
 - Code: Add presubmit hook to run tests and linting automatically
 - Code: Move the polls router from `app.js` to `routes/polls.js`, need access to wss
 - Design: Add a copy to clipboard button to results page, _copies voting link_
-    - Send poll creator directly to results page ??
+	- Send poll creator directly to results page ??
 - Design: Add a loading icon for Create Poll and Vote buttons
-    - Dispaly an error when a request fails
-    - Make the button flash red ??
-    - Let user know their vote didn't count ??
+	- Dispaly an error when a request fails
+	- Make the button flash red ??
+	- Let user know their vote didn't count ??
 - Feature: On results page indicate which option(s) the viewer voted for
 - Feature: Allow users to save a poll as a draft, as a link with query parameters ??
 - Feature: Add version number to the footer
@@ -87,16 +87,16 @@ This list is probably going to be a mess until I make more progress.
 - Perf: Only send socket messages to clients that have the tab active ??
 - Design: Responsive webpage, phone friendly
 - Feature: Store info about who created a poll
-    - Feature: Allow polls to be made private (only viewable by its creator)
-    - Feature: Delete/restore polls
+	- Feature: Allow polls to be made private (only viewable by its creator)
+	- Feature: Delete/restore polls
 - Monetization: Add ads to make money
 - Monetization: Advertise the service to get users
 - Perf: Cache recent polls using redis, minimize database transactions
 - Feature: Make a simple cli app that can make polls and see results
 - Code: Use vue.js ??
-    - 1 page app ??
-    - No querying the document manually
+	- 1 page app ??
+	- No querying the document manually
 - Future: Consider what changes would need to happen if a v2 was created
 - Perf: Reduce number of dependencies ??
 - Code: Socket messaging architecture
-    - https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md
+	- https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md

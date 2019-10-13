@@ -49,9 +49,9 @@ input[type=text] {
 	border: none;
 	padding: 3px;
 	background-color: transparent;
-    color: var(--offwhite);
-    border: 1px dotted var(--offwhite);
-    outline:none;
+	color: var(--offwhite);
+	border: 1px dotted var(--offwhite);
+	outline:none;
 }
 
 input[type=radio] {
