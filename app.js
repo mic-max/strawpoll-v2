@@ -71,28 +71,28 @@ router.post('/', async (req, res, next) => {
 			return { id: i, text: x, votes: [] }
 		})
 	}
-	
+
 	Poll.create(data)
 		.then((data) => res.json(data._id))
 		.catch((err) => next(err))
-})	
+})
 
 /* Update a poll */
 router.put('/:id', async (req, res, next) => {
 	const id = req.params.id
 	const option = req.body.option
-	
+
 	let poll = await Poll.findById(id)
-	
+
 	const ip = req.connection.remoteAddress
 	const has_voted = poll.options.reduce((x, y) => x |= y.votes.includes(ip), false)
-	
+
 	// and not multi vote poll
 	if (has_voted) {
 		console.log('ip already voted:', ip)
 		return res.sendStatus(204)
 	}
-	
+
 	Poll.findOneAndUpdate({_id: id, 'options.id': option}, {
 		$addToSet: {'options.$.votes': ip}
 	})
@@ -104,13 +104,13 @@ router.put('/:id', async (req, res, next) => {
 })
 
 app.use('/polls', router)
-		
+
 // error handler
 app.use((err, req, res) => {
 	// set locals, only providing error in development
 	res.locals.message = err.message
 	res.locals.error = IS_DEV ? err : {}
-	
+
 	app.use('/', index)
 	// render the error page
 	res.status(err.status || 500)

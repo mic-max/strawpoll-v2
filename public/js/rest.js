@@ -30,13 +30,13 @@ async function create_poll() {
 	}
 }
 
-// eslint-disable-next-line no-unused-vars 
+// eslint-disable-next-line no-unused-vars
 async function vote() {
 	const radio = document.querySelector('input[name="option"]:checked')
-	
+
 	if (!radio)
 		return
-	
+
 	// eslint-disable-next-line no-undef
 	const id = get_id_from_url()
 	const data = {
@@ -60,7 +60,7 @@ async function vote() {
 	}
 }
 
-// eslint-disable-next-line no-unused-vars 
+// eslint-disable-next-line no-unused-vars
 function show_results() {
 	location.href += '/r'
 }

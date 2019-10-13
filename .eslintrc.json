@@ -43,6 +43,9 @@
 		],
 		"eqeqeq": [
 			"error"
+		],
+		"no-trailing-spaces": [
+			"error"
 		]
 	}
 }

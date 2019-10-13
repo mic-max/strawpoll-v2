@@ -7,9 +7,9 @@ function last_input() {
 function add_input() {
 	if (input_count >= 8)
 		return
-	
+
 	last_input().removeEventListener('input', add_input)
-	
+
 	const input = document.createElement('input')
 	input.setAttribute('type', 'text')
 	input.classList.add('class', 'row')
