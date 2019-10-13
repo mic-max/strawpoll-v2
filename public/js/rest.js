@@ -8,7 +8,7 @@ async function create_poll() {
 		options: [...document.querySelectorAll('.option')].map(x => x.value).filter(x => x)
 	}
 
-	if (!data.question && !data.options[0] && !data.options[1]) {
+	if (!(data.question && data.options[0] && data.options[1])) {
 		alert('Requires a question and at least two options.')
 		return
 	}

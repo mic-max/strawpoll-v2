@@ -48,6 +48,7 @@ This list is probably going to be a mess until I make more progress.
 	- ~It should create the poll when you press enter~
 - ~Bug: Ensure the public cannot see vote IP addresses from the API~
 - ~Code: Clean up comments, files, etc.~
+- ~Feature: Don't let users create poll without a question and 2+ options~
 - Test: Add unit tests
 - Perf: Run google page speed analysis
 - Test: Test on all major browsers
@@ -62,7 +63,6 @@ This list is probably going to be a mess until I make more progress.
 - Feature: Hide results until user has voted ??
 - Test: Improve the logging
 - Code: Have some people give this a code/design review
-- Feature: Don't let users create poll without a question and 2+ options
 - Code: Add presubmit hook to run tests and linting automatically
 - Code: Move the polls router from `app.js` to `routes/polls.js`, need access to wss
 - Design: Add a copy to clipboard button to results page, _copies voting link_
