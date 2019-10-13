@@ -18,13 +18,15 @@ async function create_poll() {
 				'Content-Type': 'application/json'
 			}
 		})
+		if (!res.ok)
+			throw new Error('Network response was not ok.')
+
 		const id = await res.json()
 		// alert(`Poll created at: ${location.origin}/${id}`)
-
 		// eslint-disable-next-line require-atomic-updates
 		location.href += id
-	} catch (err) {
-		console.error(err)
+	} catch (error) {
+		console.error('Error:', error)
 	}
 }
 
@@ -41,16 +43,21 @@ async function vote() {
 		option: radio.value
 	}
 
-	// eslint-disable-next-line no-undef
-	fetch(`${location.origin}/polls/${id}`, {
-		method: 'PUT',
-		body: JSON.stringify(data),
-		headers: {
-			'Content-Type': 'application/json'
-		}
-	})
-		.then((data) => show_results())
-		.catch((err) => console.error(err))
+	try {
+		const res = await fetch(`${location.origin}/polls/${id}`, {
+			method: 'PUT',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+		if (!res.ok)
+			throw new Error('Network response was not ok.')
+
+		show_results()
+	} catch (error) {
+		console.error('Error:', error)
+	}
 }
 
 // eslint-disable-next-line no-unused-vars 

@@ -9,8 +9,7 @@ So here's some instructions on getting up and started if you want to run this we
 ## Installation
 1. Install Node
 2. Install MongoDB
-3. Make a copy of `.env.default` named `.env` and add values.
-4. Install dependencies: `npm install`
+3. Install dependencies: `npm install`
 
 ## Development
 1. Make a new branch with your changes
@@ -27,7 +26,7 @@ So here's some instructions on getting up and started if you want to run this we
 
 ### Development
 0. Ensure the MongoDB service is running
-1. Run `npm run start:dev`
+1. Run `npm run dev`
 
 ## Todo List
 
@@ -62,17 +61,21 @@ This list is probably going to be a mess until I make more progress.
 - Code: Move the polls router from `app.js` to `routes/polls.js`, need access to wss
 - Design: Add a copy to clipboard button to results page, _copies voting link_
     - Send poll creator directly to results page ??
-- Design: Dispaly an error when a request fails (create poll, voting)
-    - Make Create Poll button flash red ??
-    - Make Vote button flash red ??
+- Design: Add a loading icon for Create Poll and Vote buttons
+    - Dispaly an error when a request fails
+    - Make the button flash red ??
     - Let user know their vote didn't count ??
 - Feature: On results page indicate which option(s) the viewer voted for
 - Feature: Allow users to save a poll as a draft, as a link with query parameters ??
+- Feature: Add version number to the footer
+- Design: Order options on the results page by number of votes ??
+- Code: Have a better logger
 
 - Design: Add a cool 404 page
 - Code: Add badges to the README https://shields.io/
 
 - Test: Add a staging area for testing features on a live server, dev.strawpoll.xyz ??
+- Test: Disable colours when in production, azure log stream doesn't support
 - Perf: Use http2 server
 - Perf: Have websocket server use the same http server express uses
 - Perf: Add minification to js + css (+ rendered html?) when deployed

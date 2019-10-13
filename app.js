@@ -5,7 +5,6 @@ const express = require('express')
 const WebSocket = require('ws')
 const mongoose = require('mongoose')
 
-const debug = require('debug')('strawpoll:app')
 const logger = require('morgan')
 const favicon = require('serve-favicon')
 
@@ -16,23 +15,22 @@ const app = express()
 const server = http.createServer(app)
 const wss = new WebSocket.Server({ server })
 
-const PORT = parseInt(process.env.PORT || '3000')
-const IS_PROD = process.env.NODE_ENV === 'PROD'
+const IS_DEV = process.env.NODE_ENV === 'DEV'
 
-server.listen(PORT, () => {
-	debug('Server listening @', PORT)
+server.listen(9001, () => {
+	console.log('Server listening @', 9001)
 })
 
 wss.on('connection', (ws) => {
 	ws.on('message', (data) => {
-		debug('Socket connected:', data)
+		console.log('Socket connected:', data)
 		ws.poll_id = data
 	})
 })
 
 wss.broadcast = (id, option) => {
 	const data = option
-	debug('Broadcast:', id, '<--', data)
+	console.log('Broadcast:', id, '<--', data)
 
 	wss.clients.forEach((ws) => {
 		if (ws.readyState === WebSocket.OPEN && ws.poll_id === id)
@@ -112,7 +110,7 @@ app.use('/polls', router)
 app.use((err, req, res) => {
 	// set locals, only providing error in development
 	res.locals.message = err.message
-	res.locals.error = IS_PROD ? {} : err
+	res.locals.error = IS_DEV ? err : {}
 	
 	app.use('/', index)
 	// render the error page
@@ -120,17 +118,19 @@ app.use((err, req, res) => {
 	res.render('error')
 })
 
-const {DB_USER, DB_PASS, DB_HOST, DB_NAME} = process.env
-let dbString = `mongodb://localhost/${DB_NAME}`
-if (IS_PROD)
-	dbString = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}`
+
+let dbString = 'localhost'
+if (!IS_DEV) {
+	const {DB_USER, DB_PASS, DB_HOST} = process.env
+	dbString = `${DB_USER}:${DB_PASS}@${DB_HOST}`
+}
 
 mongoose.Promise = global.Promise
-mongoose.connect(dbString, {
+mongoose.connect(`mongodb://${dbString}/strawpoll`, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
-	ssl: IS_PROD
+	ssl: !IS_DEV
 })
-	.then(() => debug('MongoDB Connected'))
-	.catch((err) => console.error('err:', err))
+	.then(() => console.log('MongoDB Connected'))
+	.catch(console.error)

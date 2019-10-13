@@ -3,17 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set NODE_ENV=PROD&& node -r dotenv/config app",
-    "start:dev": "set NODE_ENV=DEV&& node -r dotenv/config app",
+    "start": "node app",
+    "dev": "set NODE_ENV=DEV&& node app",
     "test": "mocha",
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "dotenv": "^8.1.0",
     "express": "~4.16.1",
-    "http-errors": "~1.6.3",
     "mongoose": "^5.7.1",
     "morgan": "~1.9.1",
     "pug": "^2.0.4",
