@@ -84,18 +84,17 @@ router.put('/:id', async (req, res, next) => {
 	
 	let poll = await Poll.findById(id)
 	
-	const ipv4 = req.connection.remoteAddress
-	const has_voted = poll.options.reduce((x, y) => x |= y.votes.includes(ipv4), false)
+	const ip = req.connection.remoteAddress
+	const has_voted = poll.options.reduce((x, y) => x |= y.votes.includes(ip), false)
 	
 	// and not multi vote poll
 	if (has_voted) {
-		console.log('ipv4 already voted:', ipv4)
-		// return res.sendStatus(204)
+		console.log('ip already voted:', ip)
+		return res.sendStatus(204)
 	}
 	
-	// $addToSet
 	Poll.findOneAndUpdate({_id: id, 'options.id': option}, {
-		$push: {'options.$.votes': ipv4} 
+		$addToSet: {'options.$.votes': ip}
 	})
 		.then(() => {
 			wss.broadcast(id, option)

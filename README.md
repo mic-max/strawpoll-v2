@@ -10,8 +10,8 @@ Now that I'm a more seasoned web developer I chose to use Node.js, WebSocket (in
 So here's some instructions on getting up and started if you want to run this web app yourself, or for my future self so I don't completely forget how to get started.
 
 ## Installation
-1. Install Node
-2. Install MongoDB
+1. Install [Node](https://nodejs.org/en/download/current/)
+2. Install [MongoDB](https://www.mongodb.com/download-center/community)
 3. Install dependencies: `npm install`
 
 ## Development
@@ -43,6 +43,7 @@ This list is probably going to be a mess until I make more progress.
 - ~Feature: Have Poll IDs start from 1~
 	- Buttons to navigate to next and prev poll
 	- Popular, random, hot, featured polls
+- ~Feature: Add version number to the footer~
 - Feature: Allow multiple votes, select box instead of radio
 - Feature: Allow adding options after the poll was already created
 - Feature: Optionally options can have an associated image, use imgur ??
@@ -71,7 +72,6 @@ This list is probably going to be a mess until I make more progress.
 	- Let user know their vote didn't count ??
 - Feature: On results page indicate which option(s) the viewer voted for
 - Feature: Allow users to save a poll as a draft, as a link with query parameters ??
-- Feature: Add version number to the footer
 - Design: Order options on the results page by number of votes ??
 - Code: Have a better logger
 - Code: Make scripts platform independent, Windows + Linux
