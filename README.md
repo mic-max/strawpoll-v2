@@ -23,6 +23,7 @@ So here's some instructions on getting up and started if you want to run this we
 0. The Azure App Service startup command should be: `npm start`
 1. Then press the `Deploy to Web App...` button on the App Service pane of the Azure extension for VS Code.
 2. Setup CI / CD using Azure Pipelines to automatically build and deploy the app when the `master` branch is updated.
+3. Add the connection string named MONGO to the App Service's Configuration.
 
 ### Development
 0. Ensure the MongoDB service is running
@@ -70,6 +71,7 @@ This list is probably going to be a mess until I make more progress.
 - Feature: Add version number to the footer
 - Design: Order options on the results page by number of votes ??
 - Code: Have a better logger
+- Code: Make scripts platform independent, Windows + Linux
 
 - Design: Add a cool 404 page
 - Code: Add badges to the README https://shields.io/

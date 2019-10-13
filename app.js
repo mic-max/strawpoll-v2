@@ -118,15 +118,8 @@ app.use((err, req, res) => {
 	res.render('error')
 })
 
-
-let dbString = 'localhost'
-if (!IS_DEV) {
-	const {DB_USER, DB_PASS, DB_HOST} = process.env
-	dbString = `${DB_USER}:${DB_PASS}@${DB_HOST}`
-}
-
 mongoose.Promise = global.Promise
-mongoose.connect(`mongodb://${dbString}/strawpoll`, {
+mongoose.connect(IS_DEV ? `mongodb://localhost/strawpoll` : process.env.CUSTOMCONNSTR_MONGO, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
