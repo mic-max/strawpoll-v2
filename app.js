@@ -69,8 +69,9 @@ router.get('/:id', (req, res, next) => {
 		.catch((err) => next(err))
 })
 
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
 	const data = {
+		_id: await Poll.countDocuments(),
 		question: req.body.question,
 		options: req.body.options.map((x, i) => {
 			return { id: i, text: x, votes: [] }

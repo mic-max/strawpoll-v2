@@ -37,7 +37,7 @@ This list is probably going to be a mess until I make more progress.
     - Have www.strawpoll.xyz redirect to strawpoll.xyz
 - ~Feature: Live updates on the results page~
     - Add a cool graph to the results page, pie chart ??
-- Feature: Have Poll IDs start from 1
+- ~Feature: Have Poll IDs start from 1~
     - Buttons to navigate to next and prev poll
     - Popular, random, hot, featured polls
 - Feature: Allow multiple votes, select box instead of radio

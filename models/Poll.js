@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const PollSchema = mongoose.Schema({
+	_id: Number,
 	question: String,
 	options: [{
 		id: Number,
@@ -11,6 +12,8 @@ const PollSchema = mongoose.Schema({
 		type: Date,
 		default: Date.now
 	}
+}, {
+	_id: false
 })
 
 module.exports = mongoose.model('Poll', PollSchema)
