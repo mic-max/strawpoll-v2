@@ -119,11 +119,10 @@ app.use((err, req, res) => {
 })
 
 mongoose.Promise = global.Promise
-mongoose.connect(IS_DEV ? `mongodb://localhost/strawpoll` : process.env.CUSTOMCONNSTR_MONGO, {
+mongoose.connect(IS_DEV ? 'mongodb://localhost/strawpoll' : process.env.CUSTOMCONNSTR_MONGO, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-	useFindAndModify: false,
-	ssl: !IS_DEV
+	useFindAndModify: false
 })
 	.then(() => console.log('MongoDB Connected'))
 	.catch(console.error)
