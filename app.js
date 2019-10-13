@@ -119,7 +119,7 @@ app.use((err, req, res) => {
 })
 
 mongoose.Promise = global.Promise
-mongoose.connect(IS_DEV ? 'mongodb://localhost/strawpoll' : process.env.CUSTOMCONNSTR_MONGO, {
+mongoose.connect(IS_DEV ? 'mongodb://localhost/strawpoll' : 'mongodb://mango:yPThEQLWVkIFd53T6FYfQq05jFK1W1P39sQXxt89p2891FGUGjJhtbwk1EeVFoq1NcZ2qJw92V0AQdNZ5dVLZw==@mango.documents.azure.com:10255/strawpoll?ssl=true&replicaSet=globaldb', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
