@@ -110,3 +110,8 @@ meter {
 	border-radius: 3px;
 	background: var(--main-color);
 }
+
+::-moz-meter-bar {
+	border-radius: 3px;
+	background: var(--main-color);
+}

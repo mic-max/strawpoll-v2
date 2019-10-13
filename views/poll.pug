@@ -9,7 +9,10 @@ block content
 	.tab
 		each val, index in options
 			.row
-				input(type='radio' name='option' value=index)
+				if index === 0
+					input(type='radio' name='option' value=index autofocus)
+				else
+					input(type='radio' name='option' value=index)
 				span= val.text
 	br
 	button(type='button' onclick='vote()') Vote
