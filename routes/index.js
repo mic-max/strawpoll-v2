@@ -2,6 +2,7 @@ const express = require('express')
 const Poll = require('../models/Poll')
 const util = require('../public/js/util')
 const { version } = require('../package')
+const middleware = require('../middleware')
 
 const router = express.Router()
 
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
 /* GET poll page. */
 router.get('/:id', (req, res) => {
 	Poll.findById(req.params.id)
+		.then(middleware.user_view)
 		.then((poll) => res.render('poll', Object.assign(poll, {version})))
 		.catch(() => res.sendStatus(404))
 })
@@ -20,6 +22,7 @@ router.get('/:id', (req, res) => {
 /* GET poll results page. */
 router.get('/:id/r', (req, res) => {
 	Poll.findById(req.params.id)
+		.then(middleware.user_view)
 		.then((poll) => res.render('result', Object.assign(poll, util, {version})))
 		.catch(() => res.sendStatus(404))
 })

@@ -25,7 +25,6 @@ async function create_poll() {
 			throw new Error('Network response was not ok.')
 
 		const id = await res.json()
-		// alert(`Poll created at: ${location.origin}/${id}`)
 		location.href += id
 	} catch (error) {
 		console.error('Error:', error)

@@ -7,10 +7,9 @@ block content
 	p.row= question
 	br
 	.tab
-		- total_votes = options.reduce((x, y) => x + y.votes.length, 0)
-		//-.sort((x, y) => y.votes.length - x.votes.length)
+		- total_votes = options.reduce((x, y) => x + y.votes, 0)
 		each val, index in options
-			- votes = val.votes.length
+			- votes = val.votes
 			.row
 				span= `${index + 1}. ${val.text}`
 			.row.option

@@ -46,6 +46,13 @@ This list is probably going to be a mess until I make more progress.
 - ~Feature: Add version number to the footer~
 - ~Design: Make sure tabbing works to go to the next element~
 	- ~It should create the poll when you press enter~
+- ~Bug: Ensure the public cannot see vote IP addresses from the API~
+- ~Code: Clean up comments, files, etc.~
+- Test: Add unit tests
+- Perf: Run google page speed analysis
+- Test: Test on all major browsers
+- Bug: Fix Pug error @ http://localhost:9001/5d9442b8222a5b1c2883cc37
+
 - Feature: Allow multiple votes, select box instead of radio
 - Feature: Allow adding options after the poll was already created
 - Feature: Optionally options can have an associated image, use imgur ??
@@ -53,13 +60,7 @@ This list is probably going to be a mess until I make more progress.
 - Feature: Set voting time limit or end time
 - Feature: Optionally add captchas before letting a user vote
 - Feature: Hide results until user has voted ??
-- Test: Test on all major browsers
-- Test: Add unit tests
 - Test: Improve the logging
-- Perf: Run google page speed analysis
-- Bug: Fix Pug error @ http://localhost:9001/5d9442b8222a5b1c2883cc37
-- Bug: Ensure the public cannot see vote IP addresses from the API
-- Code: Clean up comments, files, etc.
 - Code: Have some people give this a code/design review
 - Feature: Don't let users create poll without a question and 2+ options
 - Code: Add presubmit hook to run tests and linting automatically

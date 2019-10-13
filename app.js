@@ -8,6 +8,7 @@ const logger = require('morgan')
 const favicon = require('serve-favicon')
 
 const index = require('./routes/index')
+const middleware = require('./middleware')
 
 const app = express()
 const server = http.createServer(app)
@@ -50,12 +51,9 @@ app.use('/', index)
 const Poll = require('./models/Poll')
 const router = express.Router()
 
-// router.get('/random', (req, res, next) => {
-// })
-
 router.get('/:id', (req, res, next) => {
-	Poll.findById(req.params.id, {}, {_id: false}).exec()
-		.then((data) => res.json(data))
+	Poll.findById(req.params.id, {}, {_id: false})
+		.then((data) => res.json(middleware.user_view(data)))
 		.catch((err) => next(err))
 })
 
@@ -82,7 +80,6 @@ router.put('/:id', async (req, res, next) => {
 	const ip = req.connection.remoteAddress
 	const has_voted = poll.options.reduce((x, y) => x |= y.votes.includes(ip), false)
 
-	// and not multi vote poll
 	if (has_voted) {
 		console.log('ip already voted:', ip)
 		return res.sendStatus(204)
