@@ -1,0 +1,109 @@
+:root {
+	--main-color: #0bf;
+	--hover-color: #069;
+	--offwhite: #ccc;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 50px;
+	margin: 0px auto;
+	width: 720px;
+	font: 14px 'Courier', monospace;
+	background-image: url('/img/noisy_net.png');
+	color: var(--offwhite);
+}
+
+header {
+	text-align: center;
+}
+
+main {
+	width: 100%;
+	margin: 30px 0px;
+	display: block;
+	border-radius: 12px;
+	padding-bottom: 26px;
+}
+
+main p {
+	margin-bottom: 6px;
+}
+
+.row {
+	display: block;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.tab {
+	margin-left: 20px;
+}
+
+input[type=text] {
+	font: 14px 'Courier', monospace;
+	border: none;
+	padding: 3px;
+	background-color: transparent;
+    color: var(--offwhite);
+    border: 1px dotted var(--offwhite);
+    outline:none;
+}
+
+input[type=radio] {
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+a {
+	color: var(--main-color);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--hover-color);
+}
+
+a.title {
+	font-size: 52px;
+}
+
+button {
+	color: var(--main-color);
+	font: 22px 'Courier', monospace;
+	background-color: transparent;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	margin-top: 10px;
+	outline: none;
+}
+
+.r {
+	float: right;
+}
+
+button[type=button]:hover {
+	cursor: pointer;
+	color: var(--hover-color);
+}
+
+meter {
+	width: 500px;
+	border-radius: 3px;
+	background:rgba(51,153,204,.4);
+}
+
+::-webkit-meter-bar {
+	border: none;
+	background: transparent;
+}
+
+::-webkit-meter-optimum-value {
+	border-radius: 3px;
+	background: var(--main-color);
+}

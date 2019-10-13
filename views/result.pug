@@ -1,0 +1,21 @@
+extends layout
+
+block scripts
+	script(src='/js/socket.js')
+
+block content
+	p.row= question
+	br
+	.tab
+		- total_votes = options.reduce((x, y) => x + y.votes.length, 0)
+		//-.sort((x, y) => y.votes.length - x.votes.length)
+		each val, index in options
+			- votes = val.votes.length
+			.row
+				span= `${index + 1}. ${val.text}`
+			.row.option
+				meter(value=votes / total_votes)
+				- percent = (votes / total_votes * 100)
+				span.r= `${votes} votes, ${total_votes == 0 ? '00.00' : (percent < 10 ? '0' : '') + percent.toFixed(2)} %`
+	br
+	button#total.r= `${total_votes} total votes`

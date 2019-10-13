@@ -1,0 +1,16 @@
+extends layout
+
+block scripts
+	script(src='/js/rest.js')
+
+block content
+	p.row= question
+	br
+	.tab
+		each val, index in options
+			.row
+				input(type='radio' name='option' value=index)
+				span= val.text
+	br
+	button(type='button' onclick='vote()') Vote
+	button.r(type='button' onclick='show_results()') Results

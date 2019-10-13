@@ -1,0 +1,17 @@
+extends layout
+
+block scripts
+	script(src='/js/rest.js')
+	script(src='/js/input.js')
+
+block content
+	p.row Question
+	input.row.question(type='text' name='question' autofocus required)
+	br
+	p.row Options
+	#options
+		input.row.option(type='text' required)
+		input.row.option(type='text' required)
+		input.row.option(type='text')
+		input.row.option(type='text')
+	.row: button.r(type='button' onclick='create_poll()') Create Poll
