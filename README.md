@@ -58,6 +58,14 @@ This list is probably going to be a mess until I make more progress.
 - Code: Have some people give this a code/design review
 - Feature: Don't let users create poll without a question and 2+ options
 - Code: Add presubmit hook to run tests and linting automatically
+- Code: Move the polls router from `app.js` to `routes/polls.js`, need access to wss
+- Design: Add a copy to clipboard button to results page, _copies voting link_
+    - Send poll creator directly to results page ??
+- Design: Dispaly an error when a request fails (create poll, voting)
+    - Make Create Poll button flash red ??
+    - Make Vote button flash red ??
+    - Let user know their vote didn't count ??
+- Feature: On results page indicate which option(s) the viewer voted for
 
 - Design: Add a cool 404 page
 - Code: Add badges to the README https://shields.io/

@@ -58,7 +58,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', index)
 
 const Poll = require('./models/Poll')
-// TODO: move this router to its own file when I figure out how to access wss
 const router = express.Router()
 
 // router.get('/random', (req, res, next) => {

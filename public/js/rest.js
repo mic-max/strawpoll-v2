@@ -19,13 +19,11 @@ async function create_poll() {
 			}
 		})
 		const id = await res.json()
-		// TODO: improve UX, with copy to clipboard button or direct user to poll page
 		// alert(`Poll created at: ${location.origin}/${id}`)
 
 		// eslint-disable-next-line require-atomic-updates
 		location.href += id
 	} catch (err) {
-		// TODO: give the user a visible error, next to create poll button
 		console.error(err)
 	}
 }
@@ -57,7 +55,6 @@ async function vote() {
 		else
 			console.log(res)
 	} catch (err) {
-		// TODO: give the user a visible error, next to create poll button
 		console.error(err)
 	}
 }
