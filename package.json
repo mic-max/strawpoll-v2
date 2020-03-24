@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"express": "~4.17.1",
-		"mongoose": "^5.9.5",
+		"mongoose": "^5.9.6",
 		"morgan": "~1.10.0",
 		"pug": "^2.0.4",
 		"serve-favicon": "^2.5.0",
