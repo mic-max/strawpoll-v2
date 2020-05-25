@@ -1,4 +1,6 @@
+const fs = require('fs')
 const http = require('http')
+const https = require('https')
 const path = require('path')
 
 const express = require('express')
@@ -12,7 +14,18 @@ const middleware = require('./middleware')
 
 const app = express()
 const server = http.createServer(app)
-const wss = new WebSocket.Server({ server })
+
+const secureServer = https.createServer({
+	key: fs.readFileSync('localhost.key'),
+	cert: fs.readFileSync('localhost.crt'),
+})
+secureServer.listen(8081, (err) => {
+	if (err)
+		console.error(err)
+	console.log('Secure server listening @', 8081)
+})
+
+const wss = new WebSocket.Server({ server: server })
 
 const PORT = process.env.PORT || 8080
 const IS_DEV = process.env.NODE_ENV === 'DEV'

@@ -12,5 +12,5 @@ function user_view(data) {
 }
 
 module.exports = {
-    user_view
+	user_view
 }

@@ -26,7 +26,7 @@ function open() {
 }
 
 window.onload = () => {
-	ws = new WebSocket(`wss://${location.hostname}:8080`)
+	ws = new WebSocket(`wss://${location.hostname}:8081`)
 	total = document.getElementById('total')
 	options = [...document.querySelectorAll('.option')].map(x => {
 		return {
