@@ -2,7 +2,14 @@
 	"name": "strawpoll",
 	"version": "0.1.1",
 	"description": "Application for Creating and Voting on Polls",
-	"keywords": ["poll", "voting", "strawpoll", "vote", "ballot", "survey"],
+	"keywords": [
+		"poll",
+		"voting",
+		"strawpoll",
+		"vote",
+		"ballot",
+		"survey"
+	],
 	"homepage": "https://github.com/mic-max/strawpoll-v2#readme",
 	"bugs": {
 		"url": "https://github.com/mic-max/strawpoll-v2/issues",
@@ -16,18 +23,18 @@
 	"private": true,
 	"author": "Michael Maxwell",
 	"engines": {
-		"node": ">=0.12."
+		"node": ">=0.12"
 	},
 	"dependencies": {
-		"express": "~4.16.1",
-		"mongoose": "^5.7.1",
+		"express": "~4.17.1",
+		"mongoose": "^5.7.4",
 		"morgan": "~1.9.1",
 		"pug": "^2.0.4",
 		"serve-favicon": "^2.5.0",
 		"ws": "^7.1.2"
 	},
 	"devDependencies": {
-		"eslint": "^6.5.0",
+		"eslint": "^6.5.1",
 		"mocha": "^6.2.1"
 	},
 	"scripts": {
