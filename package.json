@@ -35,7 +35,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^6.5.1",
-		"mocha": "^6.2.1"
+		"mocha": "^8.0.1"
 	},
 	"scripts": {
 		"start": "node app",
