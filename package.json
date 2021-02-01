@@ -34,7 +34,7 @@
 		"ws": "^7.1.2"
 	},
 	"devDependencies": {
-		"eslint": "^6.5.1",
+		"eslint": "^7.19.0",
 		"mocha": "^6.2.1"
 	},
 	"scripts": {
